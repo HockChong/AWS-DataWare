@@ -5,6 +5,8 @@ A music streaming startup, Sparkify, has grown their user base and song database
 
 As their data engineer, you are tasked with building an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights into what songs their users are listening to.
 
+## Objective
+
 ## DataSets
 - Song data: s3://udacity-dend/song_data 
 - Log data: s3://udacity-dend/log_data
@@ -24,3 +26,10 @@ As their data engineer, you are tasked with building an ETL pipeline that extrac
 - artist_id, name, location, latitude, longitude
 5. time - timestamps of records in songplays broken down into specific units
 - start_time, hour, day, week, month, year, weekday
+
+## Project File
+- create_table.py is where I'll create my fact and dimension tables for the star schema in Redshift.
+- etl.py is where I'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
+- sql_queries.py is where I define my SQL statements, which will be imported into the two other files above.
+
+
