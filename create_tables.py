@@ -10,6 +10,16 @@ def drop_tables(cur, conn):
 
 
 def create_tables(cur, conn):
+    """
+    Create tables in the database using the provided cursor and connection.
+
+    Args:
+        cur: The database cursor object.
+        conn: The database connection object.
+
+    Returns:
+        None
+    """
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()
