@@ -16,6 +16,11 @@ def create_tables(cur, conn):
 
 
 def main():
+    """
+    Connects to the database using the configuration specified in 'dwh.cfg'.
+    Drops existing tables and creates new tables.
+    Closes the database connection.
+    """
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
 
