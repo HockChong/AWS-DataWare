@@ -25,9 +25,6 @@ def insert_tables(cur, conn):
         conn.commit()
 
 
-import configparser
-import psycopg2
-
 def main():
     """
     Main function that executes the ETL process.
@@ -46,27 +43,6 @@ def main():
     insert_tables(cur, conn)
 
     conn.close()
-
-def load_staging_tables(cur, conn):
-    """
-    Loads data from source files into staging tables.
-    
-    Args:
-        cur: Cursor object for executing SQL statements.
-        conn: Connection object for the database.
-    """
-    # Implementation goes here
-
-def insert_tables(cur, conn):
-    """
-    Inserts data from staging tables into final tables.
-    
-    Args:
-        cur: Cursor object for executing SQL statements.
-        conn: Connection object for the database.
-    """
-    # Implementation goes here
-
 
 if __name__ == "__main__":
     main()
