@@ -24,7 +24,6 @@ def insert_tables(cur, conn):
         cur.execute(query)
         conn.commit()
 
-
 def main():
     """
     Main function that executes the ETL process.
