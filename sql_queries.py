@@ -24,10 +24,10 @@ time_table_drop = "DROP TABLE IF EXISTS time;"
 staging_events_table_create= ("""CREATE TABLE IF NOT EXISTS staging_events (
     artist VARCHAR,
     auth VARCHAR,
-    fistName VARCHAR,
+    first_name VARCHAR,
     gender VARCHAR,
     itemInSession INT,
-    lastName VARCHAR,
+    last_name VARCHAR,
     length FLOAT,
     level VARCHAR,
     location VARCHAR,
@@ -122,7 +122,7 @@ staging_songs_copy = ("""
 # FINAL TABLES
 
 songplay_table_insert = ("""
-    INSERT INTO songplay (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
+    INSERT INTO songplay (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
     SELECT 
         TIMESTAMP 'epoch' + se.ts/1000 * INTERVAL '1 second' AS start_time,
         se.userId AS user_id,
@@ -140,11 +140,11 @@ songplay_table_insert = ("""
 user_table_insert = ("""
     INSERT INTO users (user_id, first_name, last_name, gender, level)
     SELECT DISTINCT
-        userId AS user_id,
-        firstName AS first_name,
-        lastName AS last_name,
-        gender AS gender,
-        level AS level
+        userId,
+        first_name,
+        last_name,
+        gender,
+        level
     FROM staging_events
     WHERE page = 'NextSong';
 """)
@@ -152,22 +152,22 @@ user_table_insert = ("""
 song_table_insert = ("""
     INSERT INTO songs (song_id, title, artist_id, year, duration)
     SELECT DISTINCT
-        song_id AS song_id,
-        title AS title,
-        artist_id AS artist_id,
-        year AS year,
-        duration AS duration
+        song_id,
+        title,
+        artist_id,
+        year,
+        duration
     FROM staging_songs;
 """)
 
 artist_table_insert = ("""
     INSERT INTO artists (artist_id, name, location, latitude, longitude)
     SELECT DISTINCT
-        artist_id AS artist_id,
-        artist_name AS name,
-        artist_location AS location,
-        artist_latitude AS latitude,
-        artist_longitude AS longitude
+        artist_id,
+        artist_name,
+        artist_location,
+        artist_latitude,
+        artist_longitude
     FROM staging_songs;
 """)
 
