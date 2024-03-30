@@ -24,7 +24,7 @@ time_table_drop = "DROP TABLE IF EXISTS time;"
 staging_events_table_create= ("""CREATE TABLE IF NOT EXISTS staging_events (
     artist VARCHAR,
     auth VARCHAR,
-    firstname VARCHAR,
+    first_name VARCHAR,
     gender VARCHAR,
     itemInSession INT,
     last_name VARCHAR,
@@ -69,7 +69,7 @@ songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplay (
 
 user_table_create = ("""CREATE TABLE IF NOT EXISTS users (
     user_id INT PRIMARY KEY NOT NULL,
-    firstname VARCHAR,
+    first_name VARCHAR,
     last_name VARCHAR,
     gender VARCHAR,
     level VARCHAR)
@@ -138,10 +138,10 @@ songplay_table_insert = ("""
 """)
 
 user_table_insert = ("""
-    INSERT INTO users (user_id, firstname, last_name, gender, level)
+    INSERT INTO users (user_id, first_name, last_name, gender, level)
     SELECT DISTINCT
         userId,
-        firstname,
+        first_name,
         last_name,
         gender,
         level
@@ -181,7 +181,7 @@ time_table_insert = ("""
         EXTRACT(month FROM start_time) AS month,
         EXTRACT(year FROM start_time) AS year,
         EXTRACT(weekday FROM start_time) AS weekday
-    FROM songplays;
+    FROM songplay;
 """)
 
 # QUERY LISTS
