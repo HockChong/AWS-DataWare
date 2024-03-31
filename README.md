@@ -30,4 +30,6 @@ As their data engineer, you are tasked with building an ETL pipeline that extrac
 - etl.py is where I'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
 - sql_queries.py is where I define my SQL statements, which will be imported into the two other files above.
 
-
+## How to run this file
+1. run create_table.py
+2. run etl.py
