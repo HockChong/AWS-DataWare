@@ -22,23 +22,23 @@ time_table_drop = "DROP TABLE IF EXISTS time;"
 # CREATE TABLES
 
 staging_events_table_create= ("""CREATE TABLE IF NOT EXISTS staging_events (
-    artist VARCHAR(50),
-    auth VARCHAR(50),
-    first_name VARCHAR(50),
-    gender VARCHAR(10),
+    artist VARCHAR,
+    auth VARCHAR,
+    first_name VARCHAR,
+    gender VARCHAR,
     itemInSession INT,
-    last_name VARCHAR(50),
+    last_name VARCHAR,
     length FLOAT,
-    level VARCHAR(50),
-    location VARCHAR(50),
-    method VARCHAR(50),
-    page VARCHAR(50),
+    level VARCHAR,
+    location VARCHAR,
+    method VARCHAR,
+    page VARCHAR,
     registration FLOAT,
     sessionId INT,
-    song VARCHAR(50),
+    song VARCHAR,
     status INT,
     ts BIGINT,
-    userAgent VARCHAR(50),
+    userAgent VARCHAR,
     userId INT)
 """)
 
@@ -47,10 +47,10 @@ staging_songs_table_create = ("""CREATE TABLE IF NOT EXISTS staging_songs (
     artist_id VARCHAR NOT NULL,
     artist_latitude FLOAT,
     artist_longitude FLOAT,
-    artist_location VARCHAR(30),
-    artist_name VARCHAR(30),
+    artist_location VARCHAR,
+    artist_name VARCHAR,
     song_id VARCHAR NOT NULL,
-    title VARCHAR(30),
+    title VARCHAR,
     duration FLOAT,
     year INT)
 """)
@@ -59,35 +59,35 @@ songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplay (
     songplay_id INT PRIMARY KEY NOT NULL IDENTITY(1,1),
     start_time TIMESTAMP,
     user_id INT,
-    level VARCHAR(30),
-    song_id VARCHAR(30),
-    artist_id VARCHAR(30),
+    level VARCHAR,
+    song_id VARCHAR,
+    artist_id VARCHAR,
     session_id INT,
-    location VARCHAR(30),
-    user_agent VARCHAR(30))
+    location VARCHAR,
+    user_agent VARCHAR)
 """)
 
 user_table_create = ("""CREATE TABLE IF NOT EXISTS users (
     user_id INT PRIMARY KEY NOT NULL,
-    first_name VARCHAR(30),
-    last_name VARCHAR(30),
-    gender VARCHAR(30),
-    level VARCHAR(30))
+    first_name VARCHAR,
+    last_name VARCHAR,
+    gender VARCHAR,
+    level VARCHAR)
 """)
 
 song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (
     song_id VARCHAR PRIMARY KEY NOT NULL,
-    title VARCHAR(30),
-    artist_id VARCHAR(30),
+    title VARCHAR,
+    artist_id VARCHAR,
     year INT,
     duration FLOAT)
 """)
 
 
 artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (
-    artist_id VARCHAR(30) PRIMARY KEY NOT NULL,
-    name VARCHAR(30),
-    location VARCHAR(30),
+    artist_id VARCHAR PRIMARY KEY NOT NULL,
+    name VARCHAR,
+    location VARCHAR,
     latitude FLOAT,
     longitude FLOAT)
 """)
