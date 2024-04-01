@@ -22,23 +22,23 @@ time_table_drop = "DROP TABLE IF EXISTS time;"
 # CREATE TABLES
 
 staging_events_table_create= ("""CREATE TABLE IF NOT EXISTS staging_events (
-    artist VARCHAR(30),
-    auth VARCHAR(30),
-    first_name VARCHAR(30),
+    artist VARCHAR(50),
+    auth VARCHAR(50),
+    first_name VARCHAR(50),
     gender VARCHAR(10),
     itemInSession INT,
-    last_name VARCHAR(30),
+    last_name VARCHAR(50),
     length FLOAT,
-    level VARCHAR(30),
-    location VARCHAR(30),
-    method VARCHAR(30),
-    page VARCHAR(30),
+    level VARCHAR(50),
+    location VARCHAR(50),
+    method VARCHAR(50),
+    page VARCHAR(50),
     registration FLOAT,
-    sessionId INT(30),
+    sessionId INT,
     song VARCHAR(50),
     status INT,
     ts BIGINT,
-    userAgent VARCHAR(30),
+    userAgent VARCHAR(50),
     userId INT)
 """)
 
