@@ -10,8 +10,7 @@ As their data engineer, you are tasked with building an ETL pipeline that extrac
 - Log data: s3://udacity-dend/log_data
 - Log metadata: s3://udacity-dend/log_json_path.json
 
-## DataSchema
-<img width="338" alt="Star Schema drawio" src="https://github.com/HockChong/AWS-ETL-Pipeline/assets/64703507/7b33d511-a51a-4718-8bc6-202f44e1c91e">
+## Data Schema
 
 ### Fact Table
 1. songplays - records in event data associated with song plays i.e. records with page
