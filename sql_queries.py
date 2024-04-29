@@ -1,7 +1,6 @@
 import configparser
 import psycopg2
-import configparser
-import psycopg2
+
 
 
 # CONFIG
